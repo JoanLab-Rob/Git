@@ -1,0 +1,40 @@
+Para poder crear un repositorio en Git desde la consola hay que realizar los siguientes pasos. 
+
+
+1 - Instalar Git y GitHub en el SO
+
+	Git 
+
+		sudo apt install git
+
+	GitHub 
+
+		sudo apt install gh
+
+2 - Una vez instalado GitHub debemos iniciar sesión (con user/pswd o con token) para poder crear los repos en GitHub
+
+	gh auth login 
+
+3 - Una vez iniciada la sesión, abrimos el proyecto a subir a GitHub y iniciamos el servicio
+
+	git init 
+
+4 - Añadimos todos los archivos a subir a la zona de estacionamiento 
+
+	git add *
+
+5 - Actualizamos el repo local antes de hacer un push 
+
+	git commit -m 'mensaje que queramos indicar'
+
+6 - Creamos el repo en Gh
+
+	gh repo create --source=. (donde el punto indicaremos la ruta en nuestro ordenador donde se encuentra el proyecto a subir (podemos ver la ruta usando pwd) ) --public (esto es para indicar si el repo es público o privado)
+
+7 - Una vez creado, se añadirá automaticamente el origin para realizar el push, en caso contrario podemos indicarlo de la siguiente manera 
+
+	git remote add origin URLRepoGit
+
+8 -  Para finalizar subimos el repo 
+
+	git push origin main 
